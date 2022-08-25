@@ -18,5 +18,13 @@ public abstract class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-    
+	
+	
+    public int hashCode(){
+        return 0;
+    }
+
+    public boolean equals(User u){
+        return false;
+    }
 }

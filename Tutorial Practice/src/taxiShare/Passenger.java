@@ -34,7 +34,7 @@ public class Passenger extends User {
         return false;
     }
 
-    public int hashCode(Passenger passenger){
+    /* public int hashCode(Passenger passenger){
         int outcome = 11;
         
         if (passenger.getName() != null) {
@@ -51,5 +51,48 @@ public class Passenger extends User {
         
         return outcome;
 
+    } */
+    
+    @Override
+    public int hashCode(){
+        int nameInt = 0;
+        int emailInt = 0;
+        int accountInt = 0;
+        int hashcode = 1;
+        
+        if (this.getName() == null) {
+            nameInt = 0;
+        } else {
+            hashcode = hashcode * this.getName().hashCode();
+        }
+        
+        if (this.getEmail() == null) {
+            emailInt = 0;
+        } else {
+            hashcode = hashcode * this.getEmail().hashCode();
+        }
+        
+        if (this.getAccountType() == null) {
+            accountInt = 0;
+        } else {
+            hashcode = hashcode * this.getAccountType().hashCode();
+        }
+        return hashcode;
     }
+    
+    
+    @Override
+    /* public int hashCode(){
+        int accountInt = 0;
+        int incoming = super.hashCode();
+        int outcome = incoming;
+        
+        if (this.getAccountType() == null) {
+            accountInt = 0;
+        } else {
+            outcome = outcome * this.getAccountType().hashCode();
+        }
+        return outcome;
+    } */
+    
 }
